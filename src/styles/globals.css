@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GumiRomanceTTF';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0, 0%, 93%;
+  --foreground: 0, 0%, 8%;
+  --overlay: rgba(20, 20, 20, 0.2);
+  --darker-gray: 0, 0%, 25%;
+  --dark-gray: 0, 0%, 43%;
+  --lighter-gray: 0, 0%, 81%;
+  --light-gray: 0, 0%, 61%;
+  --logo: 28, 100%, 60%;
+  --red: 6, 63%, 50%;
+  --yellow: 47, 94%, 53%;
+  --green: 94, 63%, 63%;
+  --blue: 214, 90%, 42%;
+  --skyblue: 204, 64%, 74%;
+  --faded-orange: 30, 86%, 84%;
+  --faded-yellow: 48, 78%, 88%;
+  --faded-skyblue: 202, 54%, 88%;
+  --faded-green: 92, 47%, 85%;
+  --kakao-container: 52, 100%, 50%;
+  --kakao-label: rgba(33, 33, 33, 0.85);
+  --naver-container: 146, 97%, 39%;
+  --naver-label: 0, 0%, 100%;
+  --google-container: 0, 0%, 100%;
+  --google-label: rgba(33, 33, 33, 0.85);
+}
+
+body {
+  @apply flex flex-col w-screen min-h-screen;
+  @apply font-default text-foreground bg-background;
+  @apply select-none;
+}
+
+.speech_bubble {
+  @apply inline-block relative w-fit px-3 py-1;
+  @apply border border-foreground rounded-2xl;
+  @apply bg-green text-sm sm:text-base;
+}
+
+.speech_bubble::before {
+  @apply absolute w-0 h-0 z-10;
+  content: '';
+  bottom: -10px;
+  left: 32.5px;
+  border-width: 9px 8px 9px 8px;
+  border-color: hsl(var(--green)) transparent transparent hsl(var(--green));
+  border-style: solid;
+}
+
+.speech_bubble::after {
+  @apply absolute w-0 h-0 -z-10;
+  content: '';
+  bottom: -13.2px;
+  left: 31.2px;
+  border-width: 9.7px 8.6px 9.7px 8.6px;
+  border-color: hsl(var(--foreground)) transparent transparent hsl(var(--foreground));
+  border-style: solid;
+}
+
+.ProseMirror-focused {
+  @apply outline-none;
+}
+
+ol > li {
+  @apply list-decimal pl-2;
+}
+
+ul > li {
+  @apply list-disc pl-2;
+}
+
+ol,
+ul {
+  @apply pl-5;
+}
+.swiper-pagination {
+  @apply flex justify-center items-center gap-4 w-full pt-4;
+}
+
+.swiper-pagination-bullet {
+  @apply shrink-0 content-center size-6;
+  @apply border border-darkGray rounded-lg;
+  @apply bg-lighterGray text-center text-sm text-darkerGray;
+  @apply cursor-pointer hover:bg-blue hover:text-background;
+}
+
+.swiper-pagination-bullet-active {
+  @apply size-7 bg-blue text-background text-sm font-bold;
+}
